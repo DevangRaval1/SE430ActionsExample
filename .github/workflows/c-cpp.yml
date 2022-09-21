@@ -2,25 +2,23 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
 
 jobs:
   install:
-
     runs-on: ubuntu-latest
-
     steps:
-    
     - name: Install dependencies
       run: |
-       sudo apt-get update && sudo apt-get install -y -f build-seesntial g++ cmake
-       
-build:
- needs: install
-  runs-on:ubuntu-latest
-   steps:
-    - name: Build project
-     run: |
-      g++ main.cpp -std=c++17 -o firstIO
+       sudo apt-get update && sudo apt-get install -y -f build-seesntial g++ cmake 
+  build:
+    needs: install
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build project
+        run: |
+          g++ main.cpp -std=c++17 -o firstIO
+    
