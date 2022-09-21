@@ -20,5 +20,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build project
         run: |
-          g++ main.cpp -std=c++17 -o firstIO
+          g++ SumExample.cpp -std=c++17 -o firstIO
     
