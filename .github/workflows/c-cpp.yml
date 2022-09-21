@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: Install dependencies
       run: |
-       sudo apt-get update && sudo apt-get install -y -f build-seesntial g++ cmake 
+       sudo apt-get update && sudo apt-get install -y -f build-essential g++ cmake 
   build:
     needs: install
     runs-on: ubuntu-latest
